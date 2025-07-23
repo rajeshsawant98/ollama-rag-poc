@@ -21,17 +21,41 @@ This repository contains a **Retrieval-Augmented Generation (RAG)** proof-of-con
 ## 📁 Project Structure
 
 ```
-rajeshsawant98-ollama-rag-poc/
-├── chat.py                  # Basic LLM chat using Ollama
-├── rag.py                  # General-purpose RAG for text/pdf/csv
-├── rag_busstops.py         # Structured RAG pipeline for bus stops
-├── requirements.txt        # Python dependencies
+
+Ollama-poc/
+├── chat.py                        # Basic LLM chat using Ollama
+├── rag.py                         # General-purpose RAG for text/pdf/csv
+├── rag_busstops.py                # Structured RAG pipeline for bus stops
+├── rag_social_match.py            # RAG for social match recommendations
+├── rag_social_match_with_location.py # RAG for social match with location
+├── rag_rsvp_semantic.py           # RAG for RSVP semantic search
+├── friend_recommendation_hybrid.py # Hybrid friend recommendation system
+├── rsvp_heatmap.py                # RSVP heatmap visualization
+├── visualize_embeddings.py        # Embedding visualization (standalone)
+├── user_interest_clusters.py      # User interest clustering
+├── requirements.txt               # Python dependencies
+├── busstop_chunks.json            # Bus stop data chunks
+├── busstop_index.idx              # FAISS index for bus stops
+├── friend_recommendations_hybrid.json # Hybrid friend recommendations output
+├── events_collection.json         # Events data
+├── events_with_rsvp_semantic.json # Events with RSVP semantic data
+├── dummy_users.json               # Dummy user data
+├── rsvp_heatmap.html              # RSVP heatmap output
+├── user_interest_clusters.png     # User interest cluster plot
+├── data/                          # (not committed) Add your text/pdf/csv files here
+│   ├── BusStopsWAmenities_8035766100189484498.csv
+│   └── ...
 ├── visualize/
-│   └── visualize_embeddings.py  # UMAP/PCA visualization of vector space
-├── data/                   # Add your text/pdf/csv files here
-│   ├── example.txt
-│   ├── yourfile.pdf
-│   └── BusStopsWAmenities_*.csv
+│   └── visualize_embeddings.py    # UMAP/PCA visualization of vector space
+└── venv311/                       # Python virtual environment
+
+---
+
+## 📦 Version Control Guidelines
+
+- Only commit Python scripts (`.py`), configuration files (e.g., `requirements.txt`), and code assets.
+- **Do not commit any files in the `data/` directory** (contains local/private datasets).
+- Add `data/` to your `.gitignore` to prevent accidental commits.
 ```
 
 ---
@@ -80,9 +104,46 @@ python rag.py
 python rag_busstops.py
 ```
 
-### 🔹 Visualize Embeddings
 
-Make sure `faiss_index.idx` and `chunks.json` exist from a previous run:
+### 🔹 Social Match RAG
+
+```bash
+python rag_social_match.py
+```
+
+### 🔹 Social Match with Location RAG
+
+```bash
+python rag_social_match_with_location.py
+```
+
+### 🔹 RSVP Semantic RAG
+
+```bash
+python rag_rsvp_semantic.py
+```
+
+### 🔹 Hybrid Friend Recommendation
+
+```bash
+python friend_recommendation_hybrid.py
+```
+
+### 🔹 RSVP Heatmap Visualization
+
+```bash
+python rsvp_heatmap.py
+```
+
+### 🔹 User Interest Clustering
+
+```bash
+python user_interest_clusters.py
+```
+
+### 🔹 Visualize Embeddings (UMAP/PCA)
+
+Make sure `busstop_index.idx` and `busstop_chunks.json` exist from a previous run:
 
 ```bash
 python visualize/visualize_embeddings.py

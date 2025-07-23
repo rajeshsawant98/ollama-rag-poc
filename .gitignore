@@ -1,3 +1,64 @@
+# Ignore data files and other local artifacts
+data/
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.jsonl
+*.pdf
+*.txt
+*.log
+*.db
+*.sqlite
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+
+# Ignore Python virtual environments
+venv/
+venv311/
+.env/
+
+# Ignore Jupyter and Python cache
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# Ignore output artifacts
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.html
+*.idx
+*.bin
+*.model
+*.ckpt
+*.weights
+*.onnx
+
+# Allow code assets and config
+!*.py
+!requirements.txt
+!README.md
+!visualize/
 # Python virtual environments
 .venv/
 .venv311/
