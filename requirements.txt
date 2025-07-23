@@ -7,3 +7,6 @@ tqdm
 matplotlib
 scikit-learn
 umap-learn
+geopy
+folium
+numpy
